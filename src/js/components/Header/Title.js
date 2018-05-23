@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react'
 
-
-export default class Title extends React.Component {
+export default class Header extends React.Component{
   render() {
     return (
-      <h1>{this.props.title}</h1>
-    );
+      <h1>Title</h1>
+    )
   }
 }
