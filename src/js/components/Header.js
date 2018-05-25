@@ -3,22 +3,17 @@ import React from 'react'
 import Title from './Header/Title'
 
 export default class Header extends React.Component{
-  constructor() {
-    super()
-    this.state = {
-      title: "Welcome"
-    }
+  
+  handleChange(e) {
+    const title = e.target.value
+    this.props.changeTitle(title)
   }
+  
   render() {
-    setTimeout(() => {
-      this.setState({
-        title: "Welcome Dani!!"
-      })
-    }, 2000)
     return (
       <header>
-        <Title title={this.state.title} />
-        <Title title="Another title!!" />
+        <Title title={this.props.title} />
+        <input value={this.props.title} onChange={this.handleChange.bind(this)} />
       </header>
     )
   }
